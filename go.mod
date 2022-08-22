@@ -3,7 +3,7 @@ module github.com/grokify/go-financialmodelingprep
 go 1.18
 
 require (
-	github.com/grokify/gocharts/v2 v2.7.4
+	github.com/grokify/gocharts/v2 v2.8.0
 	github.com/grokify/mogo v0.40.4
 	github.com/wcharczuk/go-chart/v2 v2.1.0
 )
