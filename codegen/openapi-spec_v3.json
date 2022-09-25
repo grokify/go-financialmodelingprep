@@ -1,0 +1,287 @@
+{
+	"components": {
+		"schemas": {
+			"IncomeStatement": {
+				"description": "Income Statement",
+				"properties": {
+					"acceptedDate": {
+						"type": "string"
+					},
+					"calendarYear": {
+						"type": "string"
+					},
+					"cik": {
+						"type": "string"
+					},
+					"costAndExpenses": {
+						"type": "number"
+					},
+					"costOfRevenue": {
+						"type": "number"
+					},
+					"date": {
+						"format": "date",
+						"type": "string"
+					},
+					"depreciationAndAmortization": {
+						"type": "number"
+					},
+					"ebitda": {
+						"type": "number"
+					},
+					"ebitdaratio": {
+						"type": "number"
+					},
+					"eps": {
+						"type": "number"
+					},
+					"epsdiluted": {
+						"type": "number"
+					},
+					"fillingDate": {
+						"format": "date",
+						"type": "string"
+					},
+					"finalLink": {
+						"type": "string"
+					},
+					"generalAndAdministrativeExpenses": {
+						"type": "number"
+					},
+					"grossProfit": {
+						"type": "number"
+					},
+					"grossProfitRatio": {
+						"type": "number"
+					},
+					"incomeBeforeTax": {
+						"type": "number"
+					},
+					"incomeBeforeTaxRatio": {
+						"type": "number"
+					},
+					"incomeTaxExpense": {
+						"type": "number"
+					},
+					"interestExpense": {
+						"type": "number"
+					},
+					"interestIncome": {
+						"type": "number"
+					},
+					"interestincome": {
+						"type": "number"
+					},
+					"link": {
+						"type": "string"
+					},
+					"netIncome": {
+						"type": "number"
+					},
+					"netIncomeRatio": {
+						"type": "number"
+					},
+					"operatingExpenses": {
+						"type": "number"
+					},
+					"operatingIncome": {
+						"type": "number"
+					},
+					"operatingIncomeRatio": {
+						"type": "number"
+					},
+					"otherExpenses": {
+						"type": "number"
+					},
+					"period": {
+						"type": "string"
+					},
+					"reportedCurrency": {
+						"type": "string"
+					},
+					"researchAndDevelopmentExpenses": {
+						"type": "number"
+					},
+					"revenue": {
+						"type": "number"
+					},
+					"sellingAndMarketingExpenses": {
+						"type": "number"
+					},
+					"sellingGeneralAndAdministrativeExpenses": {
+						"type": "number"
+					},
+					"symbol": {
+						"type": "string"
+					},
+					"totalOtherIncomeExpensesNet": {
+						"type": "number"
+					},
+					"weightedAverageShsOut": {
+						"type": "number"
+					},
+					"weightedAverageShsOutDil": {
+						"type": "number"
+					}
+				},
+				"type": "object",
+				"x-examples": {
+					"example-1": {
+						"acceptedDate": "2021-10-28 18:04:28",
+						"calendarYear": "2021",
+						"cik": "0000320193",
+						"costAndExpenses": 256868000000,
+						"costOfRevenue": 212981000000,
+						"date": "2021-09-25",
+						"depreciationAndAmortization": 11284000000,
+						"ebitda": 123136000000,
+						"ebitdaratio": 0.33660546120054563,
+						"eps": 5.4563941153239,
+						"epsdiluted": 5.4563941153239,
+						"fillingDate": "2021-10-29",
+						"finalLink": "https://www.sec.gov/Archives/edgar/data/320193/000032019321000105/aapl-20210925.htm",
+						"generalAndAdministrativeExpenses": 0,
+						"grossProfit": 152836000000,
+						"grossProfitRatio": 0.4177935962516778,
+						"incomeBeforeTax": 109207000000,
+						"incomeBeforeTaxRatio": 0.2985290459437369,
+						"incomeTaxExpense": 14527000000,
+						"interestExpense": 2645000000,
+						"interestIncome": 2843000000,
+						"interestincome": 2843000000,
+						"link": "https://www.sec.gov/Archives/edgar/data/320193/000032019321000105/0000320193-21-000105-index.htm",
+						"netIncome": 94680000000,
+						"netIncomeRatio": 0.2588179335569424,
+						"operatingExpenses": 43887000000,
+						"operatingIncome": 108949000000,
+						"operatingIncomeRatio": 0.2985290459437369,
+						"otherExpenses": 0,
+						"period": "FY",
+						"reportedCurrency": "USD",
+						"researchAndDevelopmentExpenses": 21914000000,
+						"revenue": 365817000000,
+						"sellingAndMarketingExpenses": 0,
+						"sellingGeneralAndAdministrativeExpenses": 21973000000,
+						"symbol": "AAPL",
+						"totalOtherIncomeExpensesNet": -258000000,
+						"weightedAverageShsOut": 16701272000,
+						"weightedAverageShsOutDil": 16864919000
+					}
+				}
+			},
+			"IncomeStatementListResponse": {
+				"properties": {
+					"data": {
+						"items": {
+							"$ref": "#/components/schemas/IncomeStatement"
+						},
+						"type": "array"
+					}
+				},
+				"title": "IncomeStatementListResponse",
+				"type": "object",
+				"x-stoplight": {
+					"id": "pdz2806lst1kl"
+				}
+			}
+		}
+	},
+	"info": {
+		"description": "FMP provides one of the most accurate data available on the market. Every endpoint is available in JSON format and most of them also in CSV format. Data is coming right from SEC filings after being serialized by us. Our API has over 50 endpoints and we are still growing by adding new endpoints every week. We also provide on demand custom endpoint available for our business clients.",
+		"title": "Financial Modeling Prep API",
+		"version": "3.0"
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/income-statement/{symbol}": {
+			"get": {
+				"description": "Retreive income statements for stocks by symbol or CIK.",
+				"operationId": "getIncomeStatements",
+				"parameters": [
+					{
+						"description": "Number of results to return.",
+						"in": "query",
+						"name": "limit",
+						"schema": {
+							"type": "integer"
+						}
+					},
+					{
+						"description": "Specify a quarterly income statement. Default is annual.",
+						"in": "query",
+						"name": "period",
+						"schema": {
+							"enum": [
+								"quarter"
+							],
+							"type": "string"
+						}
+					},
+					{
+						"description": "API key for authn / authz",
+						"in": "query",
+						"name": "apikey",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Format of data to return",
+						"in": "query",
+						"name": "datatype",
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IncomeStatementListResponse"
+								}
+							}
+						},
+						"description": "OK"
+					}
+				},
+				"summary": "Get Income Statements",
+				"tags": [
+					"Financial Statements"
+				]
+			},
+			"parameters": [
+				{
+					"in": "path",
+					"name": "symbol",
+					"required": true,
+					"schema": {
+						"type": "string"
+					}
+				}
+			]
+		}
+	},
+	"servers": [
+		{
+			"url": "https://financialmodelingprep.com/api/v3"
+		}
+	],
+	"tags": [
+		{
+			"name": "Financial Statements"
+		}
+	],
+	"x-stoplight": {
+		"id": "2ocig483ctl8u"
+	},
+	"x-tagGroups": [
+		{
+			"name": "Stock Fundamentals",
+			"tags": [
+				"Financial Statements"
+			]
+		}
+	]
+}
