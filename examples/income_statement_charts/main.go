@@ -19,12 +19,12 @@ func main() {
 	incs, err := fmp.ParseIncomeStatementsFile(file)
 	logutil.FatalErr(err)
 
-	fmtutil.PrintJSON(incs)
+	fmtutil.MustPrintJSON(incs)
 
 	tss, err := incs.TimeSeriesSetAnnual()
 	logutil.FatalErr(err)
 
-	fmtutil.PrintJSON(tss)
+	fmtutil.MustPrintJSON(tss)
 
 	tbl, err := tss.Table(&timeseries.TimeSeriesSetTableOpts{
 		TimeColumnTitle: "Year",
