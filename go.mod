@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/grokify/gocharts/v2 v2.8.1
-	github.com/grokify/mogo v0.40.4
+	github.com/grokify/mogo v0.40.5
 	github.com/wcharczuk/go-chart/v2 v2.1.0
 	golang.org/x/oauth2 v0.0.0-20220909003341-f21342109be1
 )
@@ -24,10 +24,10 @@ require (
 	github.com/xuri/efp v0.0.0-20220603152613-6918739fd470 // indirect
 	github.com/xuri/excelize/v2 v2.6.1 // indirect
 	github.com/xuri/nfp v0.0.0-20220409054826-5e722a1d9e22 // indirect
-	golang.org/x/crypto v0.0.0-20220924013350-4ba4fb4dd9e7 // indirect
+	golang.org/x/crypto v0.0.0-20221012134737-56aed061732a // indirect
 	golang.org/x/image v0.0.0-20220902085622-e7cb96979f69 // indirect
-	golang.org/x/net v0.0.0-20220923203811-8be639271d50 // indirect
-	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/net v0.0.0-20221014081412-f15817d10f9b // indirect
+	golang.org/x/text v0.3.8 // indirect
 	gonum.org/v1/gonum v0.12.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
