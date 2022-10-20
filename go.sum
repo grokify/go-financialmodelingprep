@@ -16,8 +16,8 @@ github.com/google/go-cmp v0.5.5/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/
 github.com/google/go-cmp v0.5.8 h1:e6P7q2lk1O+qJJb4BtCQXlK8vWEO8V1ZeuEdJNOqZyg=
 github.com/grokify/base36 v1.0.5 h1:iUgnt40hrPtn3M2gjU4Darow5ikf8xWXrTuMWTLziCk=
 github.com/grokify/base36 v1.0.5/go.mod h1:L+1aaUBGfp5Ctar7KCS5G9uPABo1Ccu1Ct2iQAuhOJ4=
-github.com/grokify/gocharts/v2 v2.8.1 h1:maM9hHwwlTluAfyLTDpC1etej7TBvXqdLk6lW3OUR4c=
-github.com/grokify/gocharts/v2 v2.8.1/go.mod h1:EleuFgRTINryhcNhAw3xYlc5YXJ12NSV3IcBVIJUl1Q=
+github.com/grokify/gocharts/v2 v2.8.2 h1:D2SB9upv/P9GkXRRZjz/hYQBVU2f07sk0TeYRfHKTwA=
+github.com/grokify/gocharts/v2 v2.8.2/go.mod h1:l/7POMWMLJ/PLwaJnDHZrMdVWRDFtGGjgKOrOvS23rQ=
 github.com/grokify/mogo v0.40.5 h1:JmNpy8QCRo6/qLU24HY0kItz9GKrh6bLXGzwdeeidCY=
 github.com/grokify/mogo v0.40.5/go.mod h1:w5vteZTH3+nlVdnCP4NDEeGiuXnx/ASDCsTp2EkmJFU=
 github.com/huandu/xstrings v1.3.2 h1:L18LIDzqlW6xN2rEkpdV8+oL/IXWJ1APd+vsdYy4Wdw=
