@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/grokify/gocharts/v2 v2.8.2
-	github.com/grokify/mogo v0.40.10
+	github.com/grokify/mogo v0.40.11
 	github.com/wcharczuk/go-chart/v2 v2.1.0
 	golang.org/x/oauth2 v0.0.0-20220909003341-f21342109be1
 )
