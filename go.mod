@@ -3,14 +3,15 @@ module github.com/grokify/go-financialmodelingprep
 go 1.18
 
 require (
-	github.com/grokify/gocharts/v2 v2.8.8
-	github.com/grokify/mogo v0.45.0
+	github.com/grokify/gocharts/v2 v2.8.10
+	github.com/grokify/mogo v0.47.0
 	github.com/wcharczuk/go-chart/v2 v2.1.0
 	golang.org/x/oauth2 v0.4.0
 )
 
 require (
 	github.com/buger/jsonparser v1.1.1 // indirect
+	github.com/go-logfmt/logfmt v0.6.0 // indirect
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/grokify/base36 v1.0.5 // indirect
@@ -24,11 +25,11 @@ require (
 	github.com/xuri/efp v0.0.0-20220603152613-6918739fd470 // indirect
 	github.com/xuri/excelize/v2 v2.7.0 // indirect
 	github.com/xuri/nfp v0.0.0-20220409054826-5e722a1d9e22 // indirect
-	golang.org/x/crypto v0.5.0 // indirect
-	golang.org/x/exp v0.0.0-20230113213754-f9f960f08ad4 // indirect
-	golang.org/x/image v0.3.0 // indirect
-	golang.org/x/net v0.5.0 // indirect
-	golang.org/x/text v0.6.0 // indirect
+	golang.org/x/crypto v0.6.0 // indirect
+	golang.org/x/exp v0.0.0-20230213192124-5e25df0256eb // indirect
+	golang.org/x/image v0.5.0 // indirect
+	golang.org/x/net v0.7.0 // indirect
+	golang.org/x/text v0.7.0 // indirect
 	gonum.org/v1/gonum v0.12.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
