@@ -92,7 +92,7 @@ func (iss IncomeStatements) FinancialsMatrixAnnual() ([][]int, error) {
 		return matrix, err
 	}
 	for _, dt := range tss.Times {
-		if !timeutil.IsYearStart(dt) {
+		if !timeutil.NewTimeMore(dt, time.Sunday).IsYearStart() {
 			return matrix, errors.New("non-year start time")
 		}
 		rfc3339 := dt.Format(time.RFC3339)
