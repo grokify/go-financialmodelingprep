@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.0.3
 x-stoplight:
   id: 2ocig483ctl8u
 info:
@@ -13,6 +13,15 @@ x-tagGroups:
   - name: Stock Fundamentals
     tags:
       - Financial Statements
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: apikey
+      description: API key for authn / authz
+security:
+  - ApiKeyAuth: []
 paths:
   '/income-statement/{symbol}':
     parameters:
@@ -32,7 +41,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IncomeStatementListResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/IncomeStatement'
       operationId: getIncomeStatements
       parameters:
         - schema:
@@ -43,15 +54,11 @@ paths:
         - schema:
             type: string
             enum:
+              - annual
               - quarter
           in: query
           name: period
           description: Specify a quarterly income statement. Default is annual.
-        - schema:
-            type: string
-          in: query
-          name: apikey
-          description: API key for authn / authz
         - schema:
             type: string
           in: query
@@ -106,7 +113,6 @@ components:
       properties:
         date:
           type: string
-          format: date
         symbol:
           type: string
         reportedCurrency:
@@ -115,7 +121,6 @@ components:
           type: string
         fillingDate:
           type: string
-          format: date
         acceptedDate:
           type: string
         calendarYear:
@@ -180,17 +185,9 @@ components:
           type: number
         link:
           type: string
+          nullable: false
         finalLink:
           type: string
+          nullable: false
         interestincome:
           type: number
-    IncomeStatementListResponse:
-      title: IncomeStatementListResponse
-      x-stoplight:
-        id: pdz2806lst1kl
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/IncomeStatement'
