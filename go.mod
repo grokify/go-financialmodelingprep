@@ -3,7 +3,7 @@ module github.com/grokify/go-financialmodelingprep
 go 1.18
 
 require (
-	github.com/grokify/gocharts/v2 v2.13.0
+	github.com/grokify/gocharts/v2 v2.14.1
 	github.com/grokify/mogo v0.59.0
 	github.com/wcharczuk/go-chart/v2 v2.1.1
 	golang.org/x/oauth2 v0.13.0
@@ -22,7 +22,7 @@ require (
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fastjson v1.6.4 // indirect
 	github.com/valyala/quicktemplate v1.7.0 // indirect
-	github.com/xuri/efp v0.0.0-20230802181842-ad255f2331ca // indirect
+	github.com/xuri/efp v0.0.0-20231025114914-d1ff6096ae53 // indirect
 	github.com/xuri/excelize/v2 v2.8.0 // indirect
 	github.com/xuri/nfp v0.0.0-20230919160717-d98342af3f05 // indirect
 	golang.org/x/crypto v0.14.0 // indirect
