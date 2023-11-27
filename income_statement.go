@@ -48,9 +48,9 @@ func (iss IncomeStatements) ChartAnnual() (chart.Chart, error) {
 		return chart.Chart{}, err
 	}
 	opts := sts2wchart.DefaultLineChartOpts()
-	opts.Interval = timeutil.Year
-	opts.XAxisTickInterval = timeutil.Year
-	opts.XAxisGridInterval = timeutil.Year
+	opts.Interval = timeutil.IntervalYear
+	opts.XAxisTickInterval = timeutil.IntervalYear
+	opts.XAxisGridInterval = timeutil.IntervalYear
 
 	return sts2wchart.TimeSeriesSetToLineChart(*tss, opts)
 }
@@ -60,7 +60,7 @@ func (iss IncomeStatements) TimeSeriesSetAnnual() (*timeseries.TimeSeriesSet, er
 		return nil, errors.New("no income statements")
 	}
 	tss := timeseries.NewTimeSeriesSet(iss[0].Symbol)
-	tss.Interval = timeutil.Year
+	tss.Interval = timeutil.IntervalYear
 	tss.IsFloat = false
 	for _, is := range iss {
 		yyyy, err := is.CalendarYearInt()
