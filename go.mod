@@ -6,7 +6,7 @@ go 1.21
 
 require (
 	github.com/grokify/gocharts/v2 v2.15.2
-	github.com/grokify/mogo v0.61.0
+	github.com/grokify/mogo v0.61.1
 	github.com/wcharczuk/go-chart/v2 v2.1.1
 	golang.org/x/oauth2 v0.14.0
 )
