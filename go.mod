@@ -5,8 +5,8 @@ go 1.21
 // toolchain go1.21.1
 
 require (
-	github.com/grokify/gocharts/v2 v2.16.0
-	github.com/grokify/mogo v0.62.2
+	github.com/grokify/gocharts/v2 v2.16.1
+	github.com/grokify/mogo v0.62.3
 	github.com/wcharczuk/go-chart/v2 v2.1.1
 	golang.org/x/oauth2 v0.15.0
 )
