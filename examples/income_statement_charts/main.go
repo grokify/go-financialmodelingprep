@@ -53,7 +53,7 @@ func main() {
 		c, err := incs.ChartAnnual()
 		logutil.FatalErr(err)
 
-		err = wchart.WritePNG(fmt.Sprintf("_%s.png", symbol), c)
+		err = wchart.WritePNGFile(fmt.Sprintf("_%s.png", symbol), c)
 		logutil.FatalErr(err)
 	}
 
