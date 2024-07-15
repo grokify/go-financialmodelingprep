@@ -16,7 +16,7 @@ func main() {
 	file := "fmp_income-statement_aapl_ann_2021.json"
 	symbol := "AAPL"
 
-	incs, err := fmp.ParseIncomeStatementsFile(file)
+	incs, err := fmp.IncomeStatementsReadFile(file)
 	logutil.FatalErr(err)
 
 	fmtutil.MustPrintJSON(incs)
@@ -25,6 +25,16 @@ func main() {
 	logutil.FatalErr(err)
 
 	fmtutil.MustPrintJSON(tss)
+
+	ts, ok := tss.Series["Revenue"]
+	if ok {
+		fmtutil.PrintJSON(ts)
+		yoy, err := ts.TimeSeriesYearYOY("")
+		logutil.FatalErr(err)
+		fmt.Printf("YOY")
+		fmtutil.PrintJSON(yoy)
+		panic("Z")
+	}
 
 	tbl, err := tss.Table(&timeseries.TimeSeriesSetTableOpts{
 		TimeColumnTitle: "Year",
