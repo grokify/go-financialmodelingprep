@@ -5,7 +5,7 @@ import (
 	"os"
 
 	fmp "github.com/grokify/go-financialmodelingprep"
-	"github.com/grokify/gocharts/v2/charts/google"
+	"github.com/grokify/gocharts/v2/charts/google/linechart"
 	"github.com/grokify/gocharts/v2/charts/wchart"
 	"github.com/grokify/gocharts/v2/data/timeseries"
 	"github.com/grokify/mogo/fmt/fmtutil"
@@ -28,11 +28,11 @@ func main() {
 
 	ts, ok := tss.Series["Revenue"]
 	if ok {
-		fmtutil.PrintJSON(ts)
+		fmtutil.MustPrintJSON(ts)
 		yoy, err := ts.TimeSeriesYearYOY("")
 		logutil.FatalErr(err)
 		fmt.Printf("YOY")
-		fmtutil.PrintJSON(yoy)
+		fmtutil.MustPrintJSON(yoy)
 		panic("Z")
 	}
 
@@ -47,13 +47,16 @@ func main() {
 	t2, err := tbl.Transpose()
 	logutil.FatalErr(err)
 	err = t2.WriteXLSX("_income-statement_transpose.xlsx", symbol)
+	logutil.FatalErr(err)
 
-	lcm, err := google.LineChartMaterialFromTimeSeriesSet(*tss, "Year")
+	lcm, err := linechart.LineChartMaterialFromTimeSeriesSet(*tss, "Year")
+	logutil.FatalErr(err)
+
 	lcm.Title = fmt.Sprintf("%s Income Statement", symbol)
 	lcm.Width = 1200
 	logutil.FatalErr(err)
 
-	pageHTML := google.LineChartMaterialPage(lcm)
+	pageHTML := linechart.LineChartMaterialPage(lcm)
 	fmt.Println(pageHTML)
 
 	err = os.WriteFile(fmt.Sprintf("_financials_%s.html", symbol), []byte(pageHTML), 0600)
