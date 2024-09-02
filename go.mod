@@ -8,7 +8,7 @@ require (
 	github.com/grokify/gocharts/v2 v2.19.5
 	github.com/grokify/mogo v0.64.9
 	github.com/jessevdk/go-flags v1.6.1
-	github.com/wcharczuk/go-chart/v2 v2.1.1
+	github.com/wcharczuk/go-chart/v2 v2.1.2
 	golang.org/x/oauth2 v0.21.0
 )
 
