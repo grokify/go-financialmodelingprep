@@ -9,7 +9,7 @@ require (
 	github.com/grokify/mogo v0.64.11
 	github.com/jessevdk/go-flags v1.6.1
 	github.com/wcharczuk/go-chart/v2 v2.1.2
-	golang.org/x/oauth2 v0.22.0
+	golang.org/x/oauth2 v0.23.0
 )
 
 require (
