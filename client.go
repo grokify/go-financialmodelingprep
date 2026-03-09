@@ -1,6 +1,7 @@
 package financialmodelingprep
 
 import (
+	"context"
 	"errors"
 	"fmt"
 	"net/http"
@@ -27,7 +28,7 @@ func NewClient(apiKey string) *Client {
 	}
 }
 
-func (c *Client) GetIncomeStatement(symbol, period string, limit uint) (*http.Response, error) {
+func (c *Client) GetIncomeStatement(ctx context.Context, symbol, period string, limit uint) (*http.Response, error) {
 	period = strings.ToLower(strings.TrimSpace(period))
 	if c.Client == nil {
 		return nil, errors.New("simpleclient not set")
@@ -46,5 +47,5 @@ func (c *Client) GetIncomeStatement(symbol, period string, limit uint) (*http.Re
 			QueryParamLimit:  []string{strconv.Itoa(int(limit))},
 		},
 	}
-	return c.Client.Do(req)
+	return c.Client.Do(ctx, req)
 }

@@ -1,13 +1,14 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"log"
 	"os"
 	"strings"
 
 	financialmodelingprep "github.com/grokify/go-financialmodelingprep"
-	"github.com/grokify/mogo/encoding/jsonutil"
+	"github.com/grokify/mogo/encoding/jsonutil/jsonraw"
 	"github.com/grokify/mogo/log/logutil"
 	flags "github.com/jessevdk/go-flags"
 )
@@ -31,11 +32,12 @@ func main() {
 	c := financialmodelingprep.NewClient(opts.APIKey)
 
 	resp, err := c.GetIncomeStatement(
+		context.Background(),
 		opts.Symbol,
 		opts.Period,
 		opts.Limit)
 	logutil.FatalErr(err)
-	b, err := jsonutil.PrintReaderIndent(resp.Body, "", "  ")
+	b, err := jsonraw.PrintIndent(resp.Body, "", "  ")
 	logutil.FatalErr(err)
 
 	err = os.WriteFile(fmt.Sprintf(".income-statement_%s_%s.json", opts.Symbol, opts.Period), b, 0600)

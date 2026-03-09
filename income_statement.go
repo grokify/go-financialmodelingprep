@@ -8,11 +8,11 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/go-analyze/charts/chartdraw"
 	"github.com/grokify/gocharts/v2/charts/wchart/sts2wchart"
 	"github.com/grokify/gocharts/v2/data/timeseries"
 	"github.com/grokify/mogo/time/timeutil"
 	"github.com/grokify/mogo/type/slicesutil"
-	chart "github.com/wcharczuk/go-chart/v2"
 )
 
 const PeriodFY = "FY"
@@ -90,10 +90,10 @@ func (iss IncomeStatements) Periods(dedupe bool) []string {
 	return periods
 }
 
-func (iss IncomeStatements) ChartAnnual() (chart.Chart, error) {
+func (iss IncomeStatements) ChartAnnual() (chartdraw.Chart, error) {
 	tss, err := iss.TimeSeriesSetAnnual()
 	if err != nil {
-		return chart.Chart{}, err
+		return chartdraw.Chart{}, err
 	}
 	opts := sts2wchart.DefaultLineChartOpts()
 	opts.Interval = timeutil.IntervalYear

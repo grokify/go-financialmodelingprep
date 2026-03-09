@@ -49,7 +49,7 @@ func main() {
 	err = t2.WriteXLSX("_income-statement_transpose.xlsx", symbol)
 	logutil.FatalErr(err)
 
-	lcm, err := linechart.LineChartMaterialFromTimeSeriesSet(*tss, "Year")
+	lcm, err := linechart.ChartFromTimeSeriesSet(*tss, "Year")
 	logutil.FatalErr(err)
 
 	lcm.Title = fmt.Sprintf("%s Income Statement", symbol)
