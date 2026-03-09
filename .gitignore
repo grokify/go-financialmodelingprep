@@ -1,4 +1,9 @@
 .DS_Store
 .env
 _*
+*.bak
 openapi-generator-cli.jar
+
+# Test data files
+examples/**/.*.json
+examples/**/.okta
