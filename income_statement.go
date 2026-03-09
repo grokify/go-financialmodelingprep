@@ -187,7 +187,7 @@ type IncomeStatement struct {
 	CalendarYear                     string  `json:"calendarYear"`
 	Date                             string  `json:"date"`
 	FillingDate                      string  `json:"fillingDate"`
-	Period                           string  `json:"period'`
+	Period                           string  `json:"period"`
 	Symbol                           string  `json:"symbol"`
 	Revenue                          float64 `json:"revenue"`
 	CostOfRevenue                    float64 `json:"costOfRevenue"`
